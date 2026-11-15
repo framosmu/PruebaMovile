@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="OMEditTextPreference">
+        <attr name="dataType" format="enum">
+            <enum name="text" value="0"/>
+            <enum name="integer" value="1"/>
+            <enum name="decimal" value="2"/>
+        </attr>
+        <attr name="android:inputType" />
+    </declare-styleable>
+</resources>

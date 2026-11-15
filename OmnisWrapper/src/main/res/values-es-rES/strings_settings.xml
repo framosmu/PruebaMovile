@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_screen_title">Ajustes de Omnis</string>
+    <string name="setting_group_serversettings">Configuración del Servidor</string>
+    <string name="webserverurl">URL del Servidor Web</string>
+    <string name="onlineform">Formulario en Línea</string>
+    <string name="plugin">Plugin Omnis</string>
+    <string name="omnisserver">Servidor Omnis</string>
+    <string name="appscaf">Nombre del SCAF de la Aplicación</string>
+    <string name="localdatabase">Nombre de la Base de Datos Local</string>
+    <string name="offlineformname">Nombre del Formulario sin Conexión</string>
+    <string name="pushnotificationserver">Servidor de Notificaciones Push</string>
+    <string name="floatcontrols">Controles Flotantes</string>
+    <string name="scale">Formulario de Escala</string>
+    <string name="maintainaspect">Mantener Relación de Aspectos</string>
+    <string name="hscroll">Permitir Desplazamiento Horizontal</string>
+    <string name="vscroll">Permitir Desplazamiento Vertical</string>
+
+    <!-- Descripciones de Ajustes -->
+    <string name="setting_group_desc_serversettings">
+        Configuración de conexión al servidor de Omnis.
+    </string>
+    <string name="setting_desc_webserverurl">
+        La URL completa del servidor de Omnis o Servidor Web que aloja un Plugin de Servidor Web Omnis.
+        Cuando se utiliza un plugin de servidor web, puede tener el formato: `http://mysite.com`
+    </string>
+    <string name="setting_offlinemode">Comenzar en Modo Desconectado</string>
+    <string name="setting_desc_offlinemode">Si está activado, la aplicación se inicia en modo sin conexión.</string>
+    <string name="setting_desc_onlineform">
+        Ruta al archivo \*.htm* del formulario, desde la **URL del Servidor Web**.
+        Por ejemplo: `/omnisapps/myform.htm`.
+    </string>
+    <string name="setting_desc_omnisserver">
+        Ubicación del Servidor Omnis: [Dirección IP]:[Puerto]. Por ejemplo: 194.168.1.49:5912
+    </string>
+    <string name="setting_desc_omnisplugin">
+        Si está utilizando un plugin de servidor web para comunicarse con Omnis, esta es la ruta desde la **URL del Servidor Web**.
+        Por ejemplo: `/cgi-bin/omnisapi.dll`
+    </string>
+    <string name="setting_desc_offlineformname">
+        Nombre del formulario sin conexión. **(¡No añada la extensión \*.HTM!)**
+    </string>
+    <string name="setting_desc_appscaf">
+        Nombre del SCAF de la Aplicación. (Esto es sensible a mayúsculas y minúsculas y debe coincidir con el SCAF de la Aplicación).
+    </string>
+    <string name="setting_uselocaltime">Usar Hora Local</string>
+    <string name="setting_desc_uselocaltime">
+        Si está desactivado, las fechas y horas en modo sin conexión se convierten de/a UTC, por defecto.
+        Activar deshabilita la conversión.
+    </string>
+    <string name="setting_button_clear_offline_files">Borrar Archivos Sin Conexión</string>
+    <string name="setting_button_clear_offline_files_message">¿Está seguro de que desea eliminar todos los archivos sin conexión?</string>
+
+    <string name="settingsgroup_pushnotifications">Notificaciones Push</string>
+    <string name="setting_desc_pushnotificationserver">
+        URL de la interfaz RESTful de su servidor Omnis utilizado para gestionar notificaciones push.
+        Por ejemplo: *http://myserver.com/cgi-bin/nph-omnisrestcgi/ws/5912*
+    </string>
+    <string name="pushnotificationgroupmask">Máscara de Grupo</string>
+    <string name="setting_desc_pushnotificationgroupmask">
+        Le permite especificar los Grupos de notificación Push iniciales de los que el dispositivo debe ser miembro.
+        Para calcular su máscara de bits, debe sumar **2^(N-1)** para todos los grupos que desea incluir, etc.
+    </string>
+    <string name="settingsgroup_database">Configuración de la Base de Datos</string>
+    <string name="setting_desc_localdatabase">
+        Nombre (incluyendo la extensión .db) de la base de datos sqlite local a utilizar.
+    </string>
+
+    <string name="settingsgroup_behaviour">Configuración de Comportamiento</string>
+    <string name="setting_immersivemode">Modo Inmersivo</string>
+    <string name="setting_desc_immersivemode">Requiere Reinicio de la Aplicación</string>
+    <string name="setting_debugwebview">Depurar Webview</string>
+    <string name="setting_desc_debugwebview">Si está activado, el webview se puede depurar usando DevTools de Chrome.
+    </string>
+</resources>

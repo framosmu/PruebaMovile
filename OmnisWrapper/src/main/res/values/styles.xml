@@ -1,0 +1,38 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/primary_accent</item>
+
+        <!-- Enable the following to fill the whole screen (some UI may be obscured by cutouts) -->
+<!--    <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>-->
+
+        <!-- You MUST specify a preferenceTheme for the built-in settings screen to work -->
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay.v14.Material</item>
+    </style>
+
+    <!-- Splash Screen Theme -->
+    <style name="AppTheme.Launcher" parent="Theme.AppCompat">
+        <item name="android:windowBackground">@drawable/launch_screen</item>
+    </style>
+
+    <!-- Official androidx Splash Screen Theme -->
+    <style name="Theme.App.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenAnimatedIcon">@drawable/icon</item>
+        <item name="windowSplashScreenBackground">@color/primary</item>
+        <item name="postSplashScreenTheme">@style/AppTheme</item>
+    </style>
+
+    <!-- Custom aspect camera theme -->
+    <style name="CustomAspectCameraTheme" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/primary_accent</item>
+        <item name="colorOnPrimary">@color/on_primary</item>
+    </style>
+
+
+</resources>

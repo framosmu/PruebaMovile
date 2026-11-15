@@ -1,0 +1,104 @@
+<resources>
+    <string name="app_name">Omnis Android Client</string>
+    <string name="back">Back</string>
+
+    <string name="updateneededtitle">Update Required</string>
+    <string name="updateneededtext">An update is required to run in offline mode.</string>
+    <string name="updateneededyes">Update Now</string>
+    <string name="updateneededno">Cancel</string>
+
+    <!-- Menu Strings -->
+    <string name="reload">Reload</string>
+    <string name="onlinemode">Online Mode</string>
+    <string name="updateapp">Update Application</string>
+    <string name="settings">Settings</string>
+    <string name="about">About</string>
+    <string name="credits">Credits</string>
+
+
+    <string name="nocamera">No Suitable Camera Detected</string>
+    <string name="nopdfapp">No app available to handle PDF</string>
+    <string name="abouttitle">About Omnis</string>
+
+    <string name="version">Version: %1$s</string>
+
+    <string name="choose_email_app_title">Send Email with…</string> <!-- Title used on dialog shown to select email client when using the send email action -->
+
+
+
+    <!--Generic-->
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="loading_page_overlay_message">Loading, please wait…</string>
+
+    <!-- Barcode Scanning-->
+    <string name="scanning">Scanning…</string>
+
+
+    <!-- Custom aspect camera -->
+    <string name="camera_preview_accept">Accept</string>
+    <string name="camera_preview_decline">Retry</string>
+
+    <!--File Upload Dialog-->
+    <string name="uploadtitle">Uploading Files</string>
+    <string name="uploadpreparemessage">Preparing for upload…</string>
+    <string name="uploadmessage">Uploaded %1$,d of %2$,d KB</string> <!-- Placeholder "%1$,d" will be replaced with completed KBs & "%2$,d" will be replaced with total KBs (the comma can be removed to los thousand separator)-->
+    <!--File Upload Results Dialog-->
+    <string name="uploadresults_title_success">Upload Complete</string>
+    <string name="uploadresults_title_fail">Upload Failed</string>
+    <string name="uploadresults_message_success">Upload of %1$s completed successfully.</string> <!-- Placeholder "%1$s" will be replaced with the filename -->
+    <string name="uploadresults_message_cancel">Upload of %1$s was cancelled.</string> <!-- Placeholder "%1$s" will be replaced with the filename -->
+    <string name="uploadresults_message_fail">Upload of %1$s failed.</string> <!-- Placeholder "%1$s" will be replaced with the filename -->
+    <string name="uploadresults_message_size_exceeded">File exceeds the maximum size of %1$,d bytes.</string> <!-- Placeholder "%1$,d" will be replaced with size limit  -->
+    <string name="uploadresults_offline_mode">File uploads are not supported while running in offline mode.</string>
+
+    <!--Image Settings Dialog-->
+    <string name="settings_title">Settings</string>
+    <string name="imagesettings_title">Select Image Size</string>
+    <string name="imagesettings_fullsize">Full Size (%1$dx%2$d)</string> <!-- "%1$d" and "%2$d" will be replaced with the width and height  -->
+    <string name="imagesettings_small">Small (%1$dx%2$d)</string> <!-- "%1$d" and "%2$d" will be replaced with the width and height  -->
+    <string name="imagesettings_medium">Medium (%1$dx%2$d)</string> <!-- "%1$d" and "%2$d" will be replaced with the width and height  -->
+    <string name="imagesettings_large">Large (%1$dx%2$d)</string> <!-- "%1$d" and "%2$d" will be replaced with the width and height  -->
+
+    <!-- Printing -->
+    <string name="print_error_title">Printing Error</string> <!-- Title used for printing error dialog -->
+    <string name="print_error_version">Printing is only supported on Android 4.4 or later</string> <!-- Printing error message shown when printing on an old version of Android without the required printing APIs -->
+    <string name="print_error_in_progress">Print already in progress</string> <!-- Printing error message shown in the event that a print is started before another has finished -->
+
+    <!-- Offline Mode -->
+    <string name="scaf_update_successful">Update Successful</string>
+    <string name="scaf_updating_message">Updating, please wait…</string>
+    <string name="scaf_no_updates">No updates available</string>
+    <string name="error_title_scaferror">SCAF Error</string>
+    <string name="error_title_updatecompleted">SCAF Update</string>
+    <string name="offline_form_not_ready">Offline form not ready</string>
+    <string name="offline_form_not_set">Offline form name not specified</string>
+
+    <!-- ordinal suffixes: Used for displaying some date formats.
+      Text before the first $ is the default suffix.
+      When searching for the correct suffix, Omnis will try to match the number prefixed by a $.
+      If it finds it, it will add the text between the number and the next $ as the ordinal suffix.
+    -->
+    <string name="ordinalsuffixes">th$1st$2nd$3rd$21st$22nd$23rd$31st$</string>
+
+    <string name="noforminscaf">Form \"$\" not found in SCAF</string> <!-- The $ character will be replaced with the form name -->
+
+
+    <string name="notification_channel_default_name">All Notifications</string> <!-- The display name for the default push notification channel -->
+    <string name="notification_channel_default_description"></string> <!-- The description for the default push notification channel (optional) -->
+
+    <!-- Rooted Device detection -->
+    <string name="disabled_due_to_rooted">This app will not run on rooted devices</string>
+    <string name="disabled_due_to_rooted_title">Rooted Device Detected</string>
+
+    <!-- Network connectivity dialog strings -->
+    <string name="connection_lost_title">Connection Lost</string>
+    <string name="connection_lost_message">Internet connection has been lost. Would you like to switch to Offline mode?</string>
+    <string name="connection_restored_title">Connection Restored</string>
+    <string name="connection_restored_message">Internet connection has been restored. Would you like to switch back to Online mode?</string>
+    <string name="change_to_offline">Switch to Offline</string>
+    <string name="change_to_online">Switch to Online</string>
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Permission explanation strings - Shown after the first time a user declines a permission -->
+    <string name="permission_explanation_title">Explicación del Permiso</string>
+
+    <string name="permission_camera_photo">Esta funcionalidad requiere acceso a la cámara del dispositivo.</string>
+    <string name="permission_camera_barcode">Se requiere acceso a la cámara para escanear códigos de barras.</string>
+    <string name="permission_photo">Necesario para capturar fotos.</string>
+    <string name="permission_contacts_read">Se requiere acceso a los contactos para esta funcionalidad.</string>
+    <string name="permission_images_read_storage">Las imágenes deben leerse desde el dispositivo.</string>
+    <string name="permission_location">Se requiere información de ubicación para esta funcionalidad.</string>
+    <string name="permission_phone_call">Esta funcionalidad requiere la capacidad de realizar llamadas telefónicas.</string>
+    <string name="permission_notifications">Esta funcionalidad requiere la capacidad de mostrar notificaciones.</string>
+</resources>

@@ -1,0 +1,82 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply from: "../omnisInterface/omnisinterface_dependencies.gradle"
+
+def apkFilename = "OmnisWrapper.apk" // Change this to alter the output APK filename
+
+android {
+    namespace "net.omnis.android"
+    compileSdk 35
+    defaultConfig {
+        applicationId "net.omnis.androidwrapper"
+        minSdkVersion 26
+        targetSdkVersion 35
+        versionCode 346
+        versionName '3.4.7'
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        // Set the output filename for all variants:
+        applicationVariants.all{
+            variant ->
+                variant.outputs.each{
+                    output->
+                        output.outputFileName = apkFilename
+                }
+        }
+
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = "17"
+    }
+
+    buildFeatures {
+        buildConfig = true
+    }
+}
+
+configurations.all {
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+        def requested = details.requested
+        if (requested.group == 'com.android.support') {
+            if (!requested.name.startsWith("multidex")) {
+                details.useVersion "$support_version"
+            }
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.7'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.8.7'
+    implementation 'androidx.core:core-splashscreen:1.0.1'
+    implementation project(':omnisinterface')
+    implementation "io.noties.markwon:core:4.6.2" // Markdown rendering library: https://github.com/noties/Markwon
+
+    // Import the BoM for the Firebase platform
+    implementation platform("com.google.firebase:firebase-bom:$firebase_version")
+
+    implementation 'com.google.firebase:firebase-messaging-ktx'
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+
+    implementation 'com.google.mlkit:barcode-scanning:17.3.0'
+
+    // Dependencies required by OmnisInterface (as we're not pulling it in from a repository):
+    implementation omnisInterfaceImplementationDependencies.values()
+}
+
+apply plugin: 'com.google.gms.google-services'

@@ -1,0 +1,49 @@
+ext {
+
+    // Set variables used for versioning, if they've not been defined elsewhere in the project:
+    if (!project.hasProperty('serialization_version')) {
+        serialization_version = '1.4.1'
+    }
+
+    if (!project.hasProperty('kotlin_version')) {
+        kotlin_version = '1.8.22'
+    }
+
+
+    def camerax_version = "1.4.2"
+
+    // We include both implementation & Api omnisinterface_dependencies of the omnisInterface library, as we don't (currently) distribute through JCenter etc,
+    // meaning these omnisinterface_dependencies are not included in the imported library, or resolved by the repository.
+    // So the consuming project will need to manually add these themselves.
+
+    // These variables are provided to allow this to be 'relatively' painless.
+
+    // USAGE:
+    // In build.gradle:
+    // 1) Add 'apply from: "omnisinterface_dependencies.gradle"'
+    // 2) Add the following to your 'dependencies' section:
+
+    //      implementation omnisInterfaceImplementationDependencies.values()
+    //      implementation omnisInterfaceAPIDependencies.values()
+
+    omnisInterfaceImplementationDependencies = [
+            volley  : "com.android.volley:volley:1.2.1",
+            blurview: "com.github.Dimezis:BlurView:version-1.6.6",
+            appcompat: 'androidx.appcompat:appcompat:1.7.1',
+            constraintLayout: 'androidx.constraintlayout:constraintlayout:2.2.1',
+            material: 'com.google.android.material:material:1.13.0',
+            preference: 'androidx.preference:preference-ktx:1.2.1',
+            kotlin: "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version",
+            security: "androidx.security:security-crypto:1.0.0-alpha06",
+            cryptoktx: 'androidx.security:security-crypto-ktx:1.1.0-alpha06',
+
+            cameraXCore: "androidx.camera:camera-camera2:$camerax_version",
+            cameraXLifecycle: "androidx.camera:camera-lifecycle:$camerax_version",
+            cameraXView: "androidx.camera:camera-view:1.2.1", // This version number is not kept in step with camera-camera2 & camera-lifecycle above.
+            androidXActivity: "androidx.activity:activity:1.9.1"
+    ]
+
+    omnisInterfaceAPIDependencies = [
+
+    ]
+}

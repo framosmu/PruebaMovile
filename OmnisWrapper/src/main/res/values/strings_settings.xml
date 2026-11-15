@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Settings Strings -->
+    <string name="settings_screen_title">Omnis Settings</string>
+    <string name="setting_group_serversettings">Server Settings</string>
+    <string name="webserverurl">Web Server Url</string>
+    <string name="onlineform">Online Form</string>
+    <string name="plugin">Omnis Plugin</string>
+    <string name="omnisserver">Omnis Server</string>
+    <string name="appscaf">App Scaf Name</string>
+    <string name="localdatabase">Local Database Name</string>
+    <string name="offlineformname">Offline Form Name</string>
+    <string name="pushnotificationserver">Push Notification Server</string>
+    <string name="floatcontrols">Float Controls</string>
+    <string name="scale">Scale Form</string>
+    <string name="maintainaspect">Maintain Aspect Ratio</string>
+    <string name="hscroll">Allow Horz Scroll</string>
+    <string name="vscroll">Allow Vert Scroll</string>
+
+    <!-- Settings Descriptions -->
+    <string name="setting_group_desc_serversettings">
+        Connection settings to the Omnis server.
+    </string>
+    <string name="setting_desc_webserverurl">
+        The full URL to the Omnis server or Web Server which hosts an Omnis Web Server Plugin.\
+        \
+        For direct-to-Omnis connections it may be in the form:\
+        `http://192.168.1.100:&lt;$serverport&gt;`\
+        \
+        When using a Web Server plugin it may be in the form: `http://mysite.com`
+    </string>
+    <string name="setting_offlinemode">Start Offline</string>
+    <string name="setting_desc_offlinemode">If enabled, the app starts in offline mode.</string>
+    <string name="setting_desc_onlineform">
+        Route to the form’s *.htm* file, from **Web Server URL**.\
+        \
+        So if you’re using the built in Omnis server, it will be of the form `/jschtml/myform.htm`\
+        \
+        If you are using a web server, it will be the remainder of the URL to get to the form
+        e.g. `/omnisapps/myform.htm`.
+    </string>
+    <string name="setting_desc_omnisserver">
+        The location of the Omnis Server: `&lt;IP Address>:&lt;Port>`.\
+        \
+        Only necessary if you are using a web server with the Omnis Web Server Plugin.\
+        \
+        If the Omnis App Server is running on the same machine as the web server, you can just supply
+        a port here. E.g. `194.168.1.49:5912`
+    </string>
+    <string name="setting_desc_omnisplugin">
+        If you are using a web server plug-in to talk to Omnis, the route to this from **Web Server URL**.\
+        \
+        E.g. `/cgi-bin/omnisapi.dll`
+    </string>
+    <string name="setting_desc_offlineformname">
+        Name of the offline form.\
+        \
+        **(Do not add *.HTM* extension!)**
+    </string>
+    <string name="setting_desc_appscaf">
+        Name of the App SCAF.\
+        \
+        This will generally be the same as your library name.\
+        This is _case-sensitive_ and must match the App Scaf (by default this is generally all lower-case)
+    </string>
+    <string name="setting_uselocaltime">Use Local Time</string>
+    <string name="setting_desc_uselocaltime">
+        If disabled, dates &amp; times in offline mode are converted to/from UTC, as default.\
+        Enabling disables conversion.
+    </string>
+    <string name="setting_button_clear_offline_files">Clear Offline Files</string>
+    <string name="setting_button_clear_offline_files_message">Are you sure you wish to delete all offline resources?</string>
+
+    <string name="settingsgroup_pushnotifications">Push Notifications</string>
+    <string name="setting_desc_pushnotificationserver">
+        URL to the RESTful interface to your Omnis server used for handling push notifications.\
+        \
+        For direct to Omnis connections, this will be of the form: `http://&lt;ip address>:&lt;$serverport>`\
+        \
+        When using a Web Server, this will be a URL to your RESTful web server plugin, suffixed with *"/ws/xxx"*\
+        Where _xxx_ is either:\
+        1. **nnnn** (a port number)\
+        2. **ipaddress_nnnn** (IP address and port number)\
+        3. **serverpool_ipaddress_nnnn**\
+        \
+        E.g: *http://myserver.com/cgi-bin/nph-omnisrestcgi/ws/5912*
+    </string>
+    <string name="pushnotificationgroupmask">Group Mask</string>
+    <string name="setting_desc_pushnotificationgroupmask">
+        Allows you to specify the initial push notification Groups the device should be a member of.\
+        \
+        This takes a number, which should be a _bitmask_, where bit _N_ corresponds to the Group with _GroupMaskValue = N_, for the appropriate _App Group_.\
+        \
+        To calculate your bitmask, you need to sum **2^(N-1)** for all of the groups you wish to include, where N is the Group’s **GroupMaskValue**.
+    </string>
+    <string name="settingsgroup_database">Database Settings</string>
+    <string name="setting_desc_localdatabase">
+        The name (including .db extension) of the local sqlite database to use.\
+        \
+        If you are bundling a prepopulated database with your app, its name should match what you set here.
+    </string>
+
+    <string name="settingsgroup_behaviour">Behaviour Settings</string>
+    <string name="setting_immersivemode">Immersive Mode</string>
+    <string name="setting_desc_immersivemode">Requires App Restart</string>
+    <string name="setting_debugwebview">Debug Webview</string>
+    <string name="setting_desc_debugwebview">If enabled, the webview can be debugged using Chrome DevTools</string>
+</resources>

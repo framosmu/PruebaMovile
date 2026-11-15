@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settings xmlns="http://omnis.net">
+    <!--
+    Este archivo define los ajustes utilizados por la aplicación, tanto los ajustes ocultos como los que se muestran en la pantalla de Ajustes.
+    Es ampliable: se pueden añadir/eliminar ajustes según lo requiera su aplicación.
+    Los ajustes están contenidos dentro de elementos <group>.
+    Dado que este archivo es tan extenso, es mucho más fácil usar la vista "STRUCTURE" de Android Studio para navegar (View > Tool Windows > Structure).
+    -->
+    <!-- AJUSTES DEL SERVIDOR -->
+    <group id="serversettings"
+        displayName="@string/setting_group_serversettings"
+        newPage="true"
+        description="@string/setting_group_desc_serversettings"
+        exposed="true">
+        <!-- Los ajustes están visibles/expuestos si tienen un atributo displayName -->
+        <setting id="WebServerURL" dataType="string" displayName="@string/webserverurl">
+            <value>http://192.168.1.136:10000</value>
+            <description>@string/setting_desc_webserverurl</description>
+        </setting>
+        <setting id="OnlineForm" dataType="string" displayName="@string/onlineform">
+            <value>/jschtml/jsMyForm.htm</value>
+            <description>@string/setting_desc_onlineform</description>
+        </setting>
+    </group>
+    <!-- MODO SIN CONEXIÓN -->
+    <group id="offlinemode_settings" displayName="Offline Mode" exposed="true" newPage="true">
+        <setting id="StartInOfflineMode" dataType="bool" displayName="@string/setting_offlinemode">
+            <value>false</value>
+            <description>@string/setting_desc_offlinemode</description>
+        </setting>
+        <setting id="AppSCAFName" dataType="string" displayName="@string/appscaf">
+            <value>pruebamovile</value>
+            <description>@string/setting_desc_appscaf</description>
+        </setting>
+        <setting id="OfflineFormName" dataType="string" displayName="@string/offlineformname">
+            <value>MovileRemoteForm</value>
+            <description>@string/setting_desc_offlineformname</description>
+        </setting>
+        <setting id="OmnisServer" dataType="string" displayName="@string/omnisserver">
+            <value>192.168.1.135:10000</value>
+            <description>@string/setting_desc_omnisserver</description>
+        </setting>
+        <setting id="OmnisPlugin" dataType="string" displayName="@string/plugin">
+            <value></value>
+            <description>@string/setting_desc_omnisplugin</description>
+        </setting>
+        <setting id="UseLocalTime" dataType="bool" displayName="@string/setting_uselocaltime">
+            <value>true</value>
+            <description>@string/setting_desc_uselocaltime</description>
+        </setting>
+        <setting id="clear_offline_files" dataType="button" displayName="Clear Offline Files">
+            <value>clearOfflineFiles</value>
+        </setting>
+    </group>
+    <!-- AJUSTES DE BASE DE DATOS -->
+    <group id="settingsgroup_data" displayName="@string/settingsgroup_database" newPage="true">
+        <setting id="LocalDBName" dataType="string" displayName="@string/localdatabase">
+            <value>local.db</value>
+            <description>@string/setting_desc_localdatabase</description>
+        </setting>
+    </group>
+    <!-- NOTIFICACIONES PUSH -->
+    <group id="settingsgroup_pushnotifications" displayName="@string/settingsgroup_pushnotifications" newPage="true">
+        <setting id="PushNotificationServer" dataType="string" displayName="@string/pushnotificationserver">
+            <value></value>
+            <description>@string/setting_desc_pushnotificationserver</description>
+        </setting>
+        <setting id="PushNotificationGroupMask" dataType="int" displayName="@string/pushnotificationgroupmask">
+            <value>0</value>
+            <description>@string/setting_desc_pushnotificationgroupmask</description>
+        </setting>
+
+        <!--
+            Android 8.0 (Oreo) y versiones posteriores requieren que las notificaciones se envíen a 'Canales' (Channels).
+            Aquí se pueden definir canales personalizados.
+            El 'value' y la 'description' deben ser el nombre de un recurso de cadena (string resource), aunque recurrirá a la cadena sin formato proporcionada si no se encuentra dicho recurso.
+
+            Puedes especificar el canal al que debe enviarse una notificación indicando su id como un valor 'android_channel_id' en la lista 'NotificationPayload' desde Omnis.
+            Si no se especifica ningún canal, se enviarán a 'channel_default'
+        -->
+        <group id="pushnotification_channels" exposed="false">
+            <setting id="channel_default" dataType="string">
+                <value>@string/notification_channel_default_name</value> <!-- Este es el nombre del canal, tal y como se muestra al usuario (en los ajustes de notificaciones de la App) -->
+                <description>@string/notification_channel_default_description</description> <!-- OPCIONAL: Esta es la descripción del canal, tal y como se muestra al usuario (en los ajustes de notificaciones de la App) -->
+                <other name="importance">3</other> <!-- OPCIONAL: Un número entre 1 y 5 que denota la importancia: https://developer.android.com/reference/android/app/NotificationManager.html#getImportance() -->
+            </setting>
+        </group>
+    </group>
+    <!-- AJUSTES DE COMPORTAMIENTO -->
+    <group id="behaviour_Settings" exposed="true" displayName="@string/settingsgroup_behaviour" newPage="true">
+        <setting id="ImmersiveMode" dataType="bool" displayName="@string/setting_immersivemode">
+            <!-- NOTA: Existen incidencias al usar el modo inmersivo junto con el modo de pantalla dividida (split screen).
+             Se recomienda desactivar la compatibilidad con pantalla dividida si se usa el modo inmersivo, estableciendo
+             android:resizeableActivity en 'false' para la actividad en AndroidManifest.xml
+             -->
+            <value>false</value>
+            <description>@string/setting_desc_immersivemode</description>
+        </setting>
+
+        <setting id="DebugWebview" dataType="bool" displayName="@string/setting_debugwebview" exposed="false">
+            <!-- Controla si el webview admite depuración (debuggable) -->
+            <value>true</value>
+            <description>@string/setting_desc_debugwebview</description>
+        </setting>
+    </group>
+    <!-- OPCIONES DEL MENÚ DE LA APLICACIÓN -->
+    <group id="menu_options" exposed="false">
+        <setting id="MenuIncludeOffline" dataType="bool">
+            <value>true</value>
+        </setting>
+
+        <setting id="MenuIncludeUpdate" dataType="bool">
+            <value>true</value>
+        </setting>
+
+        <setting id="MenuIncludeAbout" dataType="bool">
+            <value>true</value>
+        </setting>
+
+        <setting id="MenuIncludeSettings" dataType="bool">
+            <value>true</value>
+        </setting>
+    </group>
+</settings>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

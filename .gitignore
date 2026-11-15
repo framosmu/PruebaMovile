@@ -1,0 +1,10 @@
+*.iml
+.gradle
+/build
+OmnisWrapper/build
+omnisinterface/build
+.idea
+.DS_Store
+*.ap_
+*.apk
+*.dex

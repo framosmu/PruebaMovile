@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Permission explanation strings - Shown after the first time a user declines a permission -->
+    <string name="permission_explanation_title">Permission Explanation</string> <!-- Title shown on all permission explanation dialogs -->
+
+    <string name="permission_camera_photo">This functionality requires access to the device camera</string> <!-- Shown when taking a photo. Only necessary if your app manifest includes the CAMERA permission. This app is not taking the photo - it sends an intent to the camera app to do so for us.
+    Google enforces the use of this permission only if you declare the camera permission in your manifest (so a user can prevent camera access for the app and they would expect it to prevent photos) -->
+    <string name="permission_camera_barcode">Camera access is required to scan barcodes</string> <!-- Shown when attempting to scan barcodes -->
+    <string name="permission_photo">Required to capture photos</string> <!-- Shown when attempting to take a photo -->
+    <string name="permission_contacts_read">Access to contacts is required for this functionality</string> <!-- Shown when attempting to access contacts -->
+    <string name="permission_images_read_storage">Images must be read from the device</string> <!-- Shown when attempting to pick an image from the device -->
+    <string name="permission_location">Location information is required for this functionality</string> <!-- Shown when attempting to access device location -->
+
+    <string name="permission_phone_call">This functionality requires the ability to make phone calls</string> <!-- Shown when attempting to make phone calls -->
+
+    <string name="permission_notifications">This functionality requires the ability to show notifications</string> <!-- May be shown when enabling push notifications -->
+
+</resources>

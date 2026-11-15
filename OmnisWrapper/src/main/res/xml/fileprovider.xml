@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <!-- Using a FileProvider prevents us needing permission to read/write external storage -->
+    <files-path name="photos" path="photos" />
+
+</paths>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "500280641262",
+    "project_id": "androidwrapper-aa222",
+    "storage_bucket": "androidwrapper-aa222.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:500280641262:android:b06f63a9d54064cc4995ff",
+        "android_client_info": {
+          "package_name": "net.omnis.androidwrapper"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwhUtbAbiuzzhCuw2Px_l6oSPz8tUQnrM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

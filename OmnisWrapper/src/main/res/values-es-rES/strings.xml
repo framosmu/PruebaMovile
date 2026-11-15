@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Cliente Android de Omnis</string>
+    <string name="back">Atrás</string>
+    <string name="updateneededtitle">Se requiere una actualización</string>
+    <string name="updateneededtext">Se requiere una actualización para poder utilizar el modo sin conexión.</string>
+    <string name="updateneededyes">Actualizar ahora</string>
+    <string name="updateneededno">Cancelar</string>
+    <string name="reload">Recargar</string>
+    <string name="onlinemode">Modo en línea</string>
+    <string name="updateapp">Actualizar aplicación</string>
+    <string name="settings">Ajustes</string>
+    <string name="about">Acerca de</string>
+    <string name="credits">Créditos</string>
+    <string name="nocamera">No se ha detectado ninguna cámara adecuada</string>
+    <string name="nopdfapp">No hay ninguna aplicación disponible para gestionar archivos PDF.</string>
+    <string name="abouttitle">Sobre Omnis</string>
+    <string name="version">Version: %1$s</string>
+    <string name="choose_email_app_title">Enviar correo electrónico con…</string>
+
+    <!--Generic-->
+    <string name="yes">Si</string>
+    <string name="no">No</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancelar</string>
+
+    <string name="loading_page_overlay_message">Cargando, por favor espere…</string>
+
+    <!-- Barcode Scanning-->
+    <string name="scanning">Exploración…</string>
+
+
+    <!-- Custom aspect camera -->
+    <string name="camera_preview_accept">Aceptar</string>
+    <string name="camera_preview_decline">Volver</string>
+
+    <!--File Upload Dialog-->
+    <string name="uploadtitle">Subiendo archivos</string>
+    <string name="uploadpreparemessage">Preparando para la subida…</string>
+    <string name="uploadmessage">Subido %1$,d de %2$,d KB</string>
+    <!--File Upload Results Dialog-->
+    <string name="uploadresults_title_success">Carga completada</string>
+    <string name="uploadresults_title_fail">Error en la carga</string>
+    <string name="uploadresults_message_success">Carga de %1$s completada con éxito.</string>
+    <string name="uploadresults_message_cancel">Carga de %1$s fue cancelada.</string>
+    <string name="uploadresults_message_fail">Carga de %1$s fallida.</string>
+    <string name="uploadresults_message_size_exceeded">El archivo supera el tamaño máximo de %1$,d bytes.</string>
+    <string name="uploadresults_offline_mode">La carga de archivos no está permitida mientras se trabaja en modo sin conexión..</string>
+
+    <!--Image Settings Dialog-->
+    <string name="settings_title">Ajustes</string>
+    <string name="imagesettings_title">Seleccionar tamaño de imagen</string>
+    <string name="imagesettings_fullsize">Tamaño completo (%1$dx%2$d)</string>
+    <string name="imagesettings_small">Pequeño (%1$dx%2$d)</string>
+    <string name="imagesettings_medium">Medio (%1$dx%2$d)</string>
+    <string name="imagesettings_large">Grande (%1$dx%2$d)</string>
+
+    <!-- Printing -->
+    <string name="print_error_title">Error de impresión</string>
+    <string name="print_error_version">La impresión solo es compatible con Android 4.4 o versiones posteriores.</string>
+    <string name="print_error_in_progress">La impresión ya está en curso</string>
+
+    <!-- Offline Mode -->
+    <string name="scaf_update_successful">Actualización realizada con éxito</string>
+    <string name="scaf_updating_message">Actualizando, por favor espere…</string>
+    <string name="scaf_no_updates">No hay actualizaciones disponibles</string>
+    <string name="error_title_scaferror">Error SCAF</string>
+    <string name="error_title_updatecompleted">Actualización de SCAF</string>
+    <string name="offline_form_not_ready">Formulario sin conexión no disponible</string>
+    <string name="offline_form_not_set">No se ha especificado el nombre del formulario sin conexión</string>
+
+    <!-- ordinal suffixes -->
+    <string name="ordinalsuffixes">th$1st$2nd$3rd$21st$22nd$23rd$31st$</string>
+
+    <string name="noforminscaf">No se encontró el formulario "$ " en el SCAF</string>
+
+    <string name="notification_channel_default_name">Todas las notificaciones</string>
+
+    <!-- Rooted Device detection -->
+    <string name="disabled_due_to_rooted">Esta aplicación no funcionará en dispositivos rooteados.</string>
+    <string name="disabled_due_to_rooted_title">Se ha detectado un dispositivo rooteado</string>
+
+    <!-- Network connectivity dialog strings -->
+    <string name="connection_lost_title">Conexión perdida</string>
+    <string name="connection_lost_message">Se ha perdido la conexión a Internet. ¿Deseas cambiar al modo Offline?</string>
+    <string name="connection_restored_title">Conexión restablecida</string>
+    <string name="connection_restored_message">Se ha restablecido la conexión a Internet. ¿Deseas volver al modo Online?</string>
+    <string name="change_to_offline">Cambiar a Offline</string>
+    <string name="change_to_online">Cambiar a Online</string>
+</resources>
