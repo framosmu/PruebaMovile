@@ -23,7 +23,7 @@
         </setting>
     </group>
     <!-- MODO SIN CONEXIÓN -->
-    <group id="offlinemode_settings" displayName="Offline Mode" exposed="true" newPage="true">
+    <group id="offlinemode_settings" displayName="@string/setting_group_offlinemode" exposed="true" newPage="true">
         <setting id="StartInOfflineMode" dataType="bool" displayName="@string/setting_offlinemode">
             <value>false</value>
             <description>@string/setting_desc_offlinemode</description>
@@ -48,7 +48,7 @@
             <value>true</value>
             <description>@string/setting_desc_uselocaltime</description>
         </setting>
-        <setting id="clear_offline_files" dataType="button" displayName="Clear Offline Files">
+        <setting id="clear_offline_files" dataType="button" displayName="@string/setting_button_clear_offline_files">
             <value>clearOfflineFiles</value>
         </setting>
     </group>

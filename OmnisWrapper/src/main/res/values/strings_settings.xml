@@ -4,6 +4,7 @@
     <!-- Settings Strings -->
     <string name="settings_screen_title">Omnis Settings</string>
     <string name="setting_group_serversettings">Server Settings</string>
+    <string name="setting_group_offlinemode">Offline Mode</string>
     <string name="webserverurl">Web Server Url</string>
     <string name="onlineform">Online Form</string>
     <string name="plugin">Omnis Plugin</string>

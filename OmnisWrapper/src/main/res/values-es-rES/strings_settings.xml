@@ -2,6 +2,7 @@
 <resources>
     <string name="settings_screen_title">Ajustes de Omnis</string>
     <string name="setting_group_serversettings">Configuración del Servidor</string>
+    <string name="setting_group_offlinemode">Modo sin Conexión</string>
     <string name="webserverurl">URL del Servidor Web</string>
     <string name="onlineform">Formulario en Línea</string>
     <string name="plugin">Plugin Omnis</string>
