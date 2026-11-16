@@ -26,6 +26,7 @@ object OMSettings {
 
 		const val IMMERSIVE_MODE = "ImmersiveMode" // jmg0950
 		const val DEBUG_WEBVIEW = "DebugWebview" // jmg1263
+		const val USE_BIOMETRICS = "UseBiometrics"
 
 		const val MENU_INCLUDE_OFFLINE = "MenuIncludeOffline"
 		const val MENU_INCLUDE_UPDATE = "MenuIncludeUpdate"

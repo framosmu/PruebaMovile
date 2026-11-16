@@ -66,6 +66,7 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.8.7'
     implementation 'androidx.core:core-splashscreen:1.0.1'
     implementation 'androidx.webkit:webkit:1.12.1'
+    implementation 'androidx.biometric:biometric:1.1.0'
     implementation project(':omnisinterface')
     implementation "io.noties.markwon:core:4.6.2" // Markdown rendering library: https://github.com/noties/Markwon
 

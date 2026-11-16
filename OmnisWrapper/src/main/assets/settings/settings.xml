@@ -102,6 +102,11 @@
             <value>true</value>
             <description>@string/setting_desc_debugwebview</description>
         </setting>
+
+        <setting id="UseBiometrics" dataType="bool" displayName="@string/setting_usebiometrics">
+            <value>false</value>
+            <description>@string/setting_desc_usebiometrics</description>
+        </setting>
     </group>
     <!-- OPCIONES DEL MENÚ DE LA APLICACIÓN -->
     <group id="menu_options" exposed="false">

@@ -73,4 +73,8 @@
     <string name="setting_debugwebview">Depurar Webview</string>
     <string name="setting_desc_debugwebview">Si está activado, el webview se puede depurar usando DevTools de Chrome.
     </string>
+    <string name="setting_usebiometrics">Usar Autenticación Biométrica</string>
+    <string name="setting_desc_usebiometrics">Requerir huella dactilar o desbloqueo facial para acceder a la aplicación</string>
+    <string name="biometric_prompt_title">Autenticación Requerida</string>
+    <string name="biometric_prompt_subtitle">Confirme su identidad mediante huella dactilar o rostro para continuar</string>
 </resources>

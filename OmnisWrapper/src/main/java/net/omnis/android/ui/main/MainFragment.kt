@@ -13,6 +13,7 @@ import net.omnis.android.R
 import net.omnis.android.about.About
 import net.omnis.android.about.CreditsActivity
 import net.omnis.android.notifications.OmnisNotification
+import net.omnis.android.security.BiometricAuthManager
 import net.omnis.android.settings.OMSettings
 import net.omnis.omnisinterface.OMDialogs
 import net.omnis.omnisinterface.Security
@@ -22,6 +23,7 @@ class MainFragment : OMImmersiveFragment() { // jmg0950
 
 	private lateinit var mOmnisController: OmnisController
 	private var networkMonitor: NetworkConnectivityMonitor? = null
+	private var mBiometricAuthenticated = false
 
 	companion object {
 		fun newInstance() = MainFragment()
@@ -56,7 +58,25 @@ class MainFragment : OMImmersiveFragment() { // jmg0950
 				return
 			}
 
-			mOmnisController.loadForm()
+			val useBiometrics = OMSettings.getSettingBool(OMSettings.IDs.USE_BIOMETRICS) == true
+			if (useBiometrics && BiometricAuthManager.canAuthenticate(requireContext()) && !mBiometricAuthenticated) {
+				val webContainer = requireView().findViewById<View>(R.id.omweb_container)
+				webContainer.visibility = View.INVISIBLE
+
+				BiometricAuthManager.authenticate(
+					activity = requireActivity(),
+					onSuccess = {
+						mBiometricAuthenticated = true
+						webContainer.visibility = View.VISIBLE
+						mOmnisController.loadForm()
+					},
+					onError = { _ ->
+						// App content stays hidden on auth failure or cancel
+					}
+				)
+			} else {
+				mOmnisController.loadForm()
+			}
 		}
 
 		if (networkMonitor == null) {

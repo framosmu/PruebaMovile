@@ -107,4 +107,8 @@
     <string name="setting_desc_immersivemode">Requires App Restart</string>
     <string name="setting_debugwebview">Debug Webview</string>
     <string name="setting_desc_debugwebview">If enabled, the webview can be debugged using Chrome DevTools</string>
+    <string name="setting_usebiometrics">Use Biometric Authentication</string>
+    <string name="setting_desc_usebiometrics">Require fingerprint or face unlock to access the application</string>
+    <string name="biometric_prompt_title">Authentication Required</string>
+    <string name="biometric_prompt_subtitle">Confirm your identity using your fingerprint or face to proceed</string>
 </resources>
