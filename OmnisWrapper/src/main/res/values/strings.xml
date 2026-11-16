@@ -101,4 +101,9 @@
     <string name="connection_restored_message">Internet connection has been restored. Would you like to switch back to Online mode?</string>
     <string name="change_to_offline">Switch to Offline</string>
     <string name="change_to_online">Switch to Online</string>
+
+    <!-- WebView Loading Error Fallback -->
+    <string name="web_load_error_title">Connection Error</string>
+    <string name="web_load_error_message">Could not connect to the Omnis web server. Please check your network connection or server settings.</string>
+    <string name="retry">Retry</string>
 </resources>

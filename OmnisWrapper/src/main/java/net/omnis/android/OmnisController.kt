@@ -3,7 +3,8 @@ package net.omnis.android
 import android.webkit.WebView
 import androidx.activity.ComponentActivity
 import androidx.fragment.app.FragmentActivity
-import net.omnis.android.BuildConfig
+import androidx.webkit.WebSettingsCompat
+import androidx.webkit.WebViewFeature
 import net.omnis.android.settings.OMSettings
 import net.omnis.android.ui.main.ProgressIndicator
 import net.omnis.omnisinterface.*
@@ -11,8 +12,6 @@ import net.omnis.omnisinterface.omdevice.OMImages
 import net.omnis.omnisinterface.webview.OMWebContainer
 import java.net.MalformedURLException
 import java.net.URL
-
-import net.omnis.android.OmnisOfflineController
 
 class OmnisController(activity: ComponentActivity, webContainer: OMWebContainer) : OMWebNavigationDelegate { // jmg1290
 
@@ -31,8 +30,21 @@ class OmnisController(activity: ComponentActivity, webContainer: OMWebContainer)
 		mOmnisInterface.webNavigationDelegate = this
 		OMImages.FILE_PROVIDER_AUTHORITY = BuildConfig.APPLICATION_ID +".fileprovider" // Especificamos la autoridad del proveedor de archivos como "${applicationId}.fileprovider" en el manifiesto
 		reinitLocalDB()
+		setupWebViewDarkMode(webContainer)
 
 		mOnlineMode = OMSettings.getSettingBool(OMSettings.IDs.START_OFFLINE) == false
+	}
+
+	private fun setupWebViewDarkMode(webContainer: OMWebContainer) {
+		val webView = webContainer.webView ?: return
+		val settings = webView.settings
+
+		if (WebViewFeature.isFeatureSupported(WebViewFeature.ALGORITHMIC_DARKENING)) {
+			WebSettingsCompat.setAlgorithmicDarkeningAllowed(settings, true)
+		} else if (WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK)) {
+			@Suppress("DEPRECATION")
+			WebSettingsCompat.setForceDark(settings, WebSettingsCompat.FORCE_DARK_AUTO)
+		}
 	}
 
 	fun loadForm(urlParams: Map<String, String>? = null) {
@@ -103,6 +115,22 @@ class OmnisController(activity: ComponentActivity, webContainer: OMWebContainer)
 	override fun omnisLoadingFailed(webview: WebView?, url: String?, error: String?): Boolean {
 		mProgressBar.hideProgress()
 		OMDialogs.removeLoadingOverlay(R.id.omweb_container,  mActivity.findViewById(R.id.main))
+
+		if (!mActivity.isFinishing && !mActivity.isDestroyed) {
+			androidx.appcompat.app.AlertDialog.Builder(mActivity)
+				.setTitle(R.string.web_load_error_title)
+				.setMessage(R.string.web_load_error_message)
+				.setPositiveButton(R.string.retry) { _, _ ->
+					loadForm()
+				}
+				.setNegativeButton(R.string.settings) { _, _ ->
+					val intent = android.content.Intent(mActivity, net.omnis.android.settings.SettingsActivity::class.java)
+					mActivity.startActivity(intent)
+				}
+				.setNeutralButton(android.R.string.cancel, null)
+				.show()
+		}
+
 		return false
 	}
 	// endregion

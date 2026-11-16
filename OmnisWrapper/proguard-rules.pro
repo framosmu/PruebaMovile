@@ -1,21 +1,31 @@
 # Add project specific ProGuard rules here.
-# You can control the set of applied configuration files using the
-# proguardFiles setting in build.gradle.
-#
-# For more details, see
-#   http://developer.android.com/guide/developing/tools/proguard.html
 
-# If your project uses WebView with JS, uncomment the following
-# and specify the fully qualified class name to the JavaScript interface
-# class:
--keepclassmembers class net.omnis.omnisinterface.JSBridge {
-   public *;
+# Keep Omnis Interface core classes and members
+-keep class net.omnis.omnisinterface.** { *; }
+-keepclassmembers class net.omnis.omnisinterface.** { *; }
+
+# Keep Omnis Android app classes and members
+-keep class net.omnis.android.** { *; }
+-keepclassmembers class net.omnis.android.** { *; }
+
+# Keep JavaScript Interface methods called from WebView
+-keepclassmembers class * {
+    @android.webkit.JavascriptInterface <methods>;
 }
 
-# Uncomment this to preserve the line number information for
-# debugging stack traces.
-#-keepattributes SourceFile,LineNumberTable
+# Preserve WebView client and Chrome client
+-keepclassmembers class * extends android.webkit.WebViewClient {
+    public *;
+}
+-keepclassmembers class * extends android.webkit.WebChromeClient {
+    public *;
+}
 
-# If you keep the line number information, uncomment this to
-# hide the original source file name.
-#-renamesourcefileattribute SourceFile
+# Keep Firebase messaging & analytics models
+-keep class com.google.firebase.** { *; }
+
+# Keep ML Kit Barcode Scanning
+-keep class com.google.mlkit.** { *; }
+
+# Preserve line numbers for stack trace debugging
+-keepattributes SourceFile,LineNumberTable,Signature,InnerClasses,EnclosingMethod,*Annotation*
