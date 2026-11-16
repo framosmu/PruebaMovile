@@ -57,18 +57,18 @@ class MainFragment : OMImmersiveFragment() { // jmg0950
 				}
 				return
 			}
+		}
 
-			val useBiometrics = OMSettings.getSettingBool(OMSettings.IDs.USE_BIOMETRICS) == true
-			android.util.Log.e("BIOMETRICS_DEBUG", "useBiometrics = $useBiometrics, canAuthenticate = ${BiometricAuthManager.canAuthenticate(requireContext())}")
+		val useBiometrics = OMSettings.getSettingBool(OMSettings.IDs.USE_BIOMETRICS) == true
+		android.util.Log.e("BIOMETRICS_DEBUG", "useBiometrics = $useBiometrics, canAuthenticate = ${BiometricAuthManager.canAuthenticate(requireContext())}, authenticated = $mBiometricAuthenticated")
 
-			if (useBiometrics && BiometricAuthManager.canAuthenticate(requireContext()) && !mBiometricAuthenticated) {
-				val webContainer = requireView().findViewById<View>(R.id.omweb_container)
-				webContainer.visibility = View.INVISIBLE
+		if (useBiometrics && BiometricAuthManager.canAuthenticate(requireContext()) && !mBiometricAuthenticated) {
+			val webContainer = requireView().findViewById<View>(R.id.omweb_container)
+			webContainer.visibility = View.INVISIBLE
 
-				promptBiometricAuth(webContainer)
-			} else {
-				mOmnisController.loadForm()
-			}
+			promptBiometricAuth(webContainer)
+		} else if (!mOmnisController.getOnlineMode() || !this::mOmnisController.isInitialized) {
+			mOmnisController.loadForm()
 		}
 
 		if (networkMonitor == null) {

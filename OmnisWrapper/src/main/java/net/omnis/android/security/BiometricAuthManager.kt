@@ -25,20 +25,24 @@ object BiometricAuthManager {
 		val callback = object : BiometricPrompt.AuthenticationCallback() {
 			override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult) {
 				super.onAuthenticationSucceeded(result)
+				Log.e("BIOMETRICS_DEBUG", "onAuthenticationSucceeded -> Desbloqueando app")
 				onSuccess()
 			}
 
 			override fun onAuthenticationError(errorCode: Int, errString: CharSequence) {
 				super.onAuthenticationError(errorCode, errString)
+				Log.e("BIOMETRICS_DEBUG", "onAuthenticationError: $errString (code $errorCode)")
 				onError(errString.toString())
 			}
 
 			override fun onAuthenticationFailed() {
 				super.onAuthenticationFailed()
+				Log.e("BIOMETRICS_DEBUG", "onAuthenticationFailed -> Intento fallido")
 			}
 		}
 
 		try {
+			Log.e("BIOMETRICS_DEBUG", "Lanzando BiometricPrompt.authenticate...")
 			val promptInfo = BiometricPrompt.PromptInfo.Builder()
 				.setTitle(activity.getString(R.string.biometric_prompt_title))
 				.setSubtitle(activity.getString(R.string.biometric_prompt_subtitle))
@@ -48,7 +52,7 @@ object BiometricAuthManager {
 			val biometricPrompt = BiometricPrompt(activity, executor, callback)
 			biometricPrompt.authenticate(promptInfo)
 		} catch (e: Exception) {
-			Log.e("BiometricAuth", "Error launching BiometricPrompt: ${e.message}", e)
+			Log.e("BIOMETRICS_DEBUG", "Error launching BiometricPrompt: ${e.message}", e)
 			onSuccess()
 		}
 	}
