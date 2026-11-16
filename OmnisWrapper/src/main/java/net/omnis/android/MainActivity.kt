@@ -47,7 +47,9 @@ class MainActivity : AppCompatActivity() {
 		FirebaseMessaging.getInstance().token.addOnCompleteListener { task ->
 			if (task.isSuccessful) {
 				val token = task.result
-				Log.d("FCM_TEST", "Mi Token FCM: $token")
+				Log.e("FCM_TEST", "==================================================")
+				Log.e("FCM_TEST", "TOKEN FCM PIXEL: $token")
+				Log.e("FCM_TEST", "==================================================")
 			} else {
 				Log.e("FCM_TEST", "Error al obtener el token de FCM", task.exception)
 			}
