@@ -66,7 +66,11 @@ class MainFragment : OMImmersiveFragment() { // jmg0950
 			val webContainer = requireView().findViewById<View>(R.id.omweb_container)
 			webContainer.visibility = View.INVISIBLE
 
-			promptBiometricAuth(webContainer)
+			webContainer.post {
+				if (isAdded) {
+					promptBiometricAuth(webContainer)
+				}
+			}
 		} else if (!mOmnisController.getOnlineMode() || !this::mOmnisController.isInitialized) {
 			mOmnisController.loadForm()
 		}
