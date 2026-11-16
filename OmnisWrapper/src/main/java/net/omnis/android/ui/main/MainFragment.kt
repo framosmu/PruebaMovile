@@ -59,6 +59,8 @@ class MainFragment : OMImmersiveFragment() { // jmg0950
 			}
 
 			val useBiometrics = OMSettings.getSettingBool(OMSettings.IDs.USE_BIOMETRICS) == true
+			android.util.Log.e("BIOMETRICS_DEBUG", "useBiometrics = $useBiometrics, canAuthenticate = ${BiometricAuthManager.canAuthenticate(requireContext())}")
+
 			if (useBiometrics && BiometricAuthManager.canAuthenticate(requireContext()) && !mBiometricAuthenticated) {
 				val webContainer = requireView().findViewById<View>(R.id.omweb_container)
 				webContainer.visibility = View.INVISIBLE
