@@ -39,11 +39,13 @@ class OmnisController(activity: ComponentActivity, webContainer: OMWebContainer)
 		val webView = webContainer.webView ?: return
 		val settings = webView.settings
 
+		val isNightMode = (mActivity.resources.configuration.uiMode and android.content.res.Configuration.UI_MODE_NIGHT_MASK) == android.content.res.Configuration.UI_MODE_NIGHT_YES
+
 		if (WebViewFeature.isFeatureSupported(WebViewFeature.ALGORITHMIC_DARKENING)) {
-			WebSettingsCompat.setAlgorithmicDarkeningAllowed(settings, true)
+			WebSettingsCompat.setAlgorithmicDarkeningAllowed(settings, isNightMode)
 		} else if (WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK)) {
 			@Suppress("DEPRECATION")
-			WebSettingsCompat.setForceDark(settings, WebSettingsCompat.FORCE_DARK_AUTO)
+			WebSettingsCompat.setForceDark(settings, if (isNightMode) WebSettingsCompat.FORCE_DARK_ON else WebSettingsCompat.FORCE_DARK_OFF)
 		}
 	}
 
