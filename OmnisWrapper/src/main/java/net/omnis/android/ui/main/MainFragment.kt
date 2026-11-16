@@ -63,17 +63,7 @@ class MainFragment : OMImmersiveFragment() { // jmg0950
 				val webContainer = requireView().findViewById<View>(R.id.omweb_container)
 				webContainer.visibility = View.INVISIBLE
 
-				BiometricAuthManager.authenticate(
-					activity = requireActivity(),
-					onSuccess = {
-						mBiometricAuthenticated = true
-						webContainer.visibility = View.VISIBLE
-						mOmnisController.loadForm()
-					},
-					onError = { _ ->
-						// App content stays hidden on auth failure or cancel
-					}
-				)
+				promptBiometricAuth(webContainer)
 			} else {
 				mOmnisController.loadForm()
 			}
@@ -105,6 +95,29 @@ class MainFragment : OMImmersiveFragment() { // jmg0950
 	override fun onResume() {
 		super.onResume()
 		checkForNotificationIntent()
+	}
+
+	private fun promptBiometricAuth(webContainer: View) {
+		BiometricAuthManager.authenticate(
+			activity = requireActivity(),
+			onSuccess = {
+				mBiometricAuthenticated = true
+				webContainer.visibility = View.VISIBLE
+				mOmnisController.loadForm()
+			},
+			onError = { _ ->
+				if (isAdded) {
+					AlertDialog.Builder(requireContext())
+						.setTitle(R.string.biometric_prompt_title)
+						.setMessage(R.string.biometric_prompt_subtitle)
+						.setCancelable(false)
+						.setPositiveButton(R.string.retry) { _, _ ->
+							promptBiometricAuth(webContainer)
+						}
+						.show()
+				}
+			}
+		)
 	}
 
 	private fun handleNetworkLost() {

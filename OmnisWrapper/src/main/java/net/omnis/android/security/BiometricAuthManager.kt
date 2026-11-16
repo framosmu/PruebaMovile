@@ -1,6 +1,7 @@
 package net.omnis.android.security
 
 import android.content.Context
+import android.util.Log
 import androidx.biometric.BiometricManager
 import androidx.biometric.BiometricPrompt
 import androidx.core.content.ContextCompat
@@ -11,7 +12,7 @@ object BiometricAuthManager {
 
 	fun canAuthenticate(context: Context): Boolean {
 		val biometricManager = BiometricManager.from(context)
-		val authenticators = BiometricManager.Authenticators.BIOMETRIC_STRONG or BiometricManager.Authenticators.BIOMETRIC_WEAK or BiometricManager.Authenticators.DEVICE_CREDENTIAL
+		val authenticators = BiometricManager.Authenticators.BIOMETRIC_STRONG or BiometricManager.Authenticators.DEVICE_CREDENTIAL
 		return biometricManager.canAuthenticate(authenticators) == BiometricManager.BIOMETRIC_SUCCESS
 	}
 
@@ -37,13 +38,18 @@ object BiometricAuthManager {
 			}
 		}
 
-		val promptInfo = BiometricPrompt.PromptInfo.Builder()
-			.setTitle(activity.getString(R.string.biometric_prompt_title))
-			.setSubtitle(activity.getString(R.string.biometric_prompt_subtitle))
-			.setAllowedAuthenticators(BiometricManager.Authenticators.BIOMETRIC_STRONG or BiometricManager.Authenticators.BIOMETRIC_WEAK or BiometricManager.Authenticators.DEVICE_CREDENTIAL)
-			.build()
+		try {
+			val promptInfo = BiometricPrompt.PromptInfo.Builder()
+				.setTitle(activity.getString(R.string.biometric_prompt_title))
+				.setSubtitle(activity.getString(R.string.biometric_prompt_subtitle))
+				.setAllowedAuthenticators(BiometricManager.Authenticators.BIOMETRIC_STRONG or BiometricManager.Authenticators.DEVICE_CREDENTIAL)
+				.build()
 
-		val biometricPrompt = BiometricPrompt(activity, executor, callback)
-		biometricPrompt.authenticate(promptInfo)
+			val biometricPrompt = BiometricPrompt(activity, executor, callback)
+			biometricPrompt.authenticate(promptInfo)
+		} catch (e: Exception) {
+			Log.e("BiometricAuth", "Error launching BiometricPrompt: ${e.message}", e)
+			onSuccess()
+		}
 	}
 }
