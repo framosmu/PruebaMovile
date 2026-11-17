@@ -12,6 +12,7 @@
     <string name="settings">Ajustes</string>
     <string name="about">Acerca de</string>
     <string name="credits">Créditos</string>
+    <string name="exit">Salir</string>
     <string name="nocamera">No se ha detectado ninguna cámara adecuada</string>
     <string name="nopdfapp">No hay ninguna aplicación disponible para gestionar archivos PDF.</string>
     <string name="abouttitle">Sobre Omnis</string>

@@ -9,6 +9,7 @@
     <item android:id="@+id/menuSettings" android:title="@string/settings" />
     <item android:id="@+id/menuAbout" android:title="@string/about" />
     <item android:id="@+id/menuCredits" android:title="@string/credits" android:visible="false" />
+    <item android:id="@+id/menuExit" android:title="@string/exit" />
 
 </menu>
 

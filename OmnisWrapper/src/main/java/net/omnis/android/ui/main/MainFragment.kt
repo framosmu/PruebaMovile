@@ -253,6 +253,11 @@ class MainFragment : OMImmersiveFragment() { // jmg0950
 				startActivity(creditsIntent)
 			}
 
+			R.id.menuExit -> {
+				activity?.finishAffinity()
+				return true
+			}
+
 		}
 
 		return super.onOptionsItemSelected(item)
