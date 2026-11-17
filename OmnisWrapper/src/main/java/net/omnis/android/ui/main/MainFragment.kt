@@ -24,6 +24,7 @@ class MainFragment : OMImmersiveFragment() { // jmg0950
 	private lateinit var mOmnisController: OmnisController
 	private var networkMonitor: NetworkConnectivityMonitor? = null
 	private var mBiometricAuthenticated = false
+	private var mFormLoaded = false
 
 	companion object {
 		fun newInstance() = MainFragment()
@@ -71,7 +72,8 @@ class MainFragment : OMImmersiveFragment() { // jmg0950
 					promptBiometricAuth(webContainer)
 				}
 			}
-		} else if (!mOmnisController.getOnlineMode() || !this::mOmnisController.isInitialized) {
+		} else if (!mFormLoaded) {
+			mFormLoaded = true
 			mOmnisController.loadForm()
 		}
 
@@ -108,6 +110,7 @@ class MainFragment : OMImmersiveFragment() { // jmg0950
 			activity = requireActivity(),
 			onSuccess = {
 				mBiometricAuthenticated = true
+				mFormLoaded = true
 				webContainer.visibility = View.VISIBLE
 				mOmnisController.loadForm()
 			},
