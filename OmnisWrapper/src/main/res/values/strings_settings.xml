@@ -111,4 +111,7 @@
     <string name="setting_desc_usebiometrics">Require fingerprint or face unlock to access the application</string>
     <string name="biometric_prompt_title">Authentication Required</string>
     <string name="biometric_prompt_subtitle">Confirm your identity using your fingerprint or face to proceed</string>
+    <string name="setting_button_clear_web_cache">Clear Web Cache</string>
+    <string name="setting_button_clear_web_cache_message">Are you sure you wish to clear the web browser cache?</string>
+    <string name="clear_web_cache_success">Web cache cleared successfully.</string>
 </resources>

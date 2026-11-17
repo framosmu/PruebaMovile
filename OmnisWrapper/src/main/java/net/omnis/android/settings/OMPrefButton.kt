@@ -45,6 +45,14 @@ class OMPrefButton(context: Context, val setting: Setting): Preference(context) 
 				})
 			}
 
+			"clear_web_cache" -> {
+				OMDialogs.showYesNoMessage(context, R.string.setting_button_clear_web_cache_message, R.string.setting_button_clear_web_cache, {
+					android.webkit.WebView(context).clearCache(true)
+					OMDialogs.showOKMessage(context, R.string.clear_web_cache_success, R.string.setting_button_clear_web_cache)
+					callback(true)
+				})
+			}
+
 			else -> {
 				Log.w("OMNIS PREF BUTTON", "Unhandled setting button click event: ${setting.stringValue}")
 				return

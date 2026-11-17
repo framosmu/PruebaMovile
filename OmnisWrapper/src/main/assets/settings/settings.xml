@@ -51,6 +51,9 @@
         <setting id="clear_offline_files" dataType="button" displayName="@string/setting_button_clear_offline_files">
             <value>clearOfflineFiles</value>
         </setting>
+        <setting id="clear_web_cache" dataType="button" displayName="@string/setting_button_clear_web_cache">
+            <value>clearWebCache</value>
+        </setting>
     </group>
     <!-- AJUSTES DE BASE DE DATOS -->
     <group id="settingsgroup_data" displayName="@string/settingsgroup_database" newPage="true">
