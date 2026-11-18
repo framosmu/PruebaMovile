@@ -1,0 +1,2 @@
+# Ensure Omnis Studio JSON library export files (*.omh) use CRLF line endings
+*.omh text eol=crlf
