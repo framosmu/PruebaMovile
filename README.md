@@ -1,4 +1,4 @@
-PruebaMovile crea una pequeña base de datos SQLite en tu dispositivo mivil Android, para observar así la capacidad de Omnis Studio para crear apps móviles, 
+PruebaMovile crea una pequeña base de datos SQLite en tu dispositivo movil Android, para observar así la capacidad de Omnis Studio para crear apps móviles, 
 el menú de configuración permite conmutar entre el modo de trabajo Off-line y On-line, el modo On-line permite conectar con un servidor de aplicaciones
 Omnis para actualizar la propia app o bien sincronizar datos con una base de datos central.
 
