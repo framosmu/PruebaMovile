@@ -8,3 +8,5 @@ o no tiene conexión de red.
 
 Además de esto podrá encontrar en el repositorio una guía, que explica cómo crear un nuevo proyecto Omnis, usando cómo base el AndroidWrapper modificado e 
 incluido en éste repositorio.
+
+La app también permite la recepción de notificaciones desde el servicio Firebase visuales o no visuales (sólo datos) para observar su uso.
