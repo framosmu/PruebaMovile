@@ -10,3 +10,5 @@ Además de esto podrá encontrar en el repositorio una guía, que explica cómo 
 incluido en éste repositorio.
 
 La app también permite la recepción de notificaciones desde el servicio Firebase visuales o no visuales (sólo datos) para observar su uso.
+El AndroidWrapper original sólo permitía el envío de notificaciones visuales, el que se encuentra en éste repositorio se ha modificado para poder enviar
+también notificaciones silenciosas es decir sólo datos.
