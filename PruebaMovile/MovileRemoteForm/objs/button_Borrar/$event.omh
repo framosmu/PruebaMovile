@@ -1,0 +1,4 @@
+On evClick
+	Do lRow.$define(i_ID,i_Nombre,i_Apellido)
+	Do lRow.$assigncols(i_ID,i_Nombre,i_Apellido)
+	Do $cinst.$sqlobject.$delete("DELETE FROM Empleados WHERE Id = @[i_ID]",lRow) Returns IDdelete

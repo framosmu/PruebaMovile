@@ -1,0 +1,2 @@
+Calculate l_ID as OJSON.$jsontolistorrow(pRow.URLparams)
+Calculate i_ID as l_ID.ID

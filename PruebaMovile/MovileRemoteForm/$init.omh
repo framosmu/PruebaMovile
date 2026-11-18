@@ -1,0 +1,3 @@
+# Comprueba si existe la tabla
+Do $cinst.$sqlobject.$selecttables() Returns IDselecttables
+Do $cinst.$clientcommand("enablepushnotifications",row(kTrue))

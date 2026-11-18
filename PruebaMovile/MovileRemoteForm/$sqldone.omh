@@ -1,0 +1,52 @@
+# Se ejecuta cada vez que concluye una operación SQL (asíncrona)
+
+# Abandona el método con el mensaje de error, si se produce.
+Do $cinst.$sqlobject.$getlasterrortext() Returns lErr
+If lErr<>"OK"
+	Calculate i_ID as 0
+	Calculate i_Nombre as ''
+	Calculate i_Apellido as ''
+	Do $cinst.$showmessage(lErr,"Error")
+	Quit method
+End If
+
+# Se ejecuta uno u otro prceso según el resultado
+Switch pID
+	Case IDselecttables
+		If pResult.$linecount=0
+			Do $cinst.$creaTabla() ## Si no existe se crea la tabla
+		End If
+		
+	Case IDselectfetch
+		Calculate lRows as pResult.$linecount
+		If lRows=0
+			Calculate i_ID as 0
+			Calculate i_Nombre as ''
+			Calculate i_Apellido as ''
+			Do $cinst.$showmessage("No existe el ID","Respuesta")
+			Quit method
+		End If
+		Calculate i_Nombre as pResult.C2
+		Calculate i_Apellido as pResult.C3
+		
+	Case IDcreatetable
+		Do $cinst.$showmessage("Tabla creada","Respuesta")
+		
+	Case IDinsert
+		Do $cinst.$showmessage("Inserción realizada","Respuesta")
+		
+	Case IDdelete
+		Calculate i_ID as 0
+		Calculate i_Nombre as ''
+		Calculate i_Apellido as ''
+		Do $cinst.$showmessage("Entrada borrada","Respuesta")
+		
+	Case IDupdate
+		Do $cinst.$showmessage("Actualización realizada","Respuesta")
+		
+	Default
+		Calculate i_ID as 0
+		Calculate i_Nombre as ''
+		Calculate i_Apellido as ''
+		Do $cinst.$showmessage("Error inesperado")
+End Switch

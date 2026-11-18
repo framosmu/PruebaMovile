@@ -1,0 +1,4 @@
+On evClick
+	Do lRow.$define(i_ID,i_Nombre,i_Apellido)
+	Do lRow.$assigncols(i_ID,i_Nombre,i_Apellido)
+	Do $cinst.$sqlobject.$update("UPDATE Empleados SET Nombre=@[i_Nombre], Apellido=@[i_Apellido] where Id = @[i_ID]",lRow,lRow) Returns IDupdate

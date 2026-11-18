@@ -1,0 +1,4 @@
+On evClick
+	Do lRow.$define(i_ID,i_Nombre,i_Apellido)
+	Do lRow.$assigncols(i_ID,i_Nombre,i_Apellido)
+	Do $cinst.$sqlobject.$insert("INSERT INTO Empleados (Id, Nombre, Apellido) VALUES (@[i_ID],@[i_Nombre],@[i_Apellido])",lRow) Returns IDinsert

@@ -1,0 +1,5 @@
+On evClick
+	Calculate i_Nombre as receivedRow.ID
+	Do lRow.$define(i_ID,i_Nombre,i_Apellido)
+	Do lRow.$assigncols(i_ID,i_Nombre,i_Apellido)
+	Do $cinst.$sqlobject.$selectfetch("Select * from Empleados where Id = @[i_ID]",lRow,kFetchAll) Returns IDselectfetch

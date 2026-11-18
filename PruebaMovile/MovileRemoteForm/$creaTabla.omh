@@ -1,0 +1,2 @@
+# Crea la tabla
+Do $cinst.$sqlobject.$execute('CREATE TABLE Empleados (Id INTEGER UNIQUE, Nombre TEXT, Apellido TEXT)') Returns IDcreatetable

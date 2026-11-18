@@ -1,0 +1,74 @@
+[
+	{
+		"name": "$creaTabla",
+		"clientexec": true,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$init",
+		"clientexec": true,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$sqldone",
+		"clientexec": true,
+		"pvardefs": [
+			{
+				"name": "pID",
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "pResult",
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "lErr",
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "lRows",
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			}
+		]
+	},
+	{
+		"name": "$construct",
+		"clientexec": false,
+		"pvardefs": [
+			{
+				"name": "pRow",
+				"type": "kRow",
+				"subtype": "",
+				"sublen": 0
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "l_ID",
+				"type": "kRow",
+				"subtype": "",
+				"sublen": 0
+			}
+		]
+	}
+]
