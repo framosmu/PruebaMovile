@@ -5,3 +5,6 @@ Omnis para actualizar la propia app o bien sincronizar datos con una base de dat
 El repositorio incluye un AndroidWrapper modificado complétamente localizado al castellano y al ingles, una opción añadida para activar o no biometría 
 haciendo más seguro el posible uso no autorizado de la app y la capacidad para activar o no el modo On-line cuando se detecta que el dispositivo tiene 
 o no tiene conexión de red.
+
+Además de esto podrá encontrar en el repositorio una guía, que explica cómo crear un nuevo proyecto Omnis, usando cómo base el AndroidWrapper modificado e 
+incluido en éste repositorio.
